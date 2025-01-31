@@ -54,9 +54,9 @@ def sync_to_ham_live(check_ins):
     """Send Netlogger check-in data to Ham.live with proper login/logout commands."""
     for check_in in check_ins:
         if check_in["status"].lower() == "checked in":
-            command = f"i{check_in['callsign']}"  # Removed unnecessary space
+            command = f"i {check_in['callsign']}"
         elif check_in["status"].lower() == "checked out":
-            command = f"o{check_in['callsign']}"  # Removed unnecessary space
+            command = f"o {check_in['callsign']}"
         else:
             print(f"Skipping unknown status for {check_in['callsign']}")
             continue
